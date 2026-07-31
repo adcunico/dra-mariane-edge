@@ -30,8 +30,8 @@
   --shadow-md: 0 12px 40px rgba(43, 36, 31, 0.10);
   --shadow-lg: 0 24px 70px rgba(43, 36, 31, 0.16);
 
-  --serif: "Fraunces", "Georgia", serif;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: "Bodoni Moda", "Didot", "Georgia", serif;
+  --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --container: 1180px;
 }
@@ -59,7 +59,7 @@ h1, h2, h3, h4 {
   font-weight: 500;
   color: var(--ink);
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 p { margin: 0; }
@@ -281,18 +281,18 @@ section { position: relative; }
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 440px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  background: var(--white);
+  max-width: 400px;
 }
-.hero-photo-frame img { width: 100%; height: auto; }
+.hero-photo-frame img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 40px rgba(43, 36, 31, 0.22));
+}
 .hero-badge {
   position: absolute;
   z-index: 2;
-  bottom: -22px;
-  left: -22px;
+  bottom: 6%;
+  left: -30px;
   background: var(--white);
   border-radius: 16px;
   padding: 16px 20px;
