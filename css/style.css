@@ -30,8 +30,8 @@
   --shadow-md: 0 12px 40px rgba(43, 36, 31, 0.10);
   --shadow-lg: 0 24px 70px rgba(43, 36, 31, 0.16);
 
-  --serif: "Cormorant Garamond", "Didot", "Georgia", serif;
-  --sans: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: "Playfair Display", "Didot", "Georgia", serif;
+  --sans: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --container: 1180px;
 }
@@ -62,6 +62,11 @@ h1, h2, h3, h4 {
   letter-spacing: 0;
 }
 h3, h4 { font-weight: 600; }
+h1 em, h2 em {
+  font-style: italic;
+  font-weight: inherit;
+  color: var(--terracotta-deep);
+}
 
 p { margin: 0; }
 
@@ -88,11 +93,11 @@ section { position: relative; }
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--terracotta-deep);
 }
@@ -110,9 +115,9 @@ section { position: relative; }
 }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head h2 {
-  font-size: clamp(32px, 4.4vw, 46px);
-  line-height: 1.15;
-  margin-top: 14px;
+  font-size: clamp(30px, 3.8vw, 42px);
+  line-height: 1.18;
+  margin-top: 16px;
 }
 .section-head p {
   margin-top: 18px;
@@ -125,9 +130,11 @@ section { position: relative; }
   align-items: center;
   gap: 10px;
   font-family: var(--sans);
-  font-weight: 600;
-  font-size: 15px;
-  padding: 15px 30px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 32px;
   border-radius: 999px;
   border: 1px solid transparent;
   cursor: pointer;
@@ -198,17 +205,29 @@ section { position: relative; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 26px;
 }
 .nav-links a {
-  font-size: 14.5px;
-  font-weight: 500;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--ink-soft);
   position: relative;
-  padding: 4px 0;
+  padding: 6px 0;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%;
+  bottom: 0;
+  height: 1.5px;
+  background: var(--terracotta);
+  transition: right 0.3s ease;
 }
 .nav-links a:hover { color: var(--ink); }
-.nav-cta { flex-shrink: 0; }
+.nav-links a:hover::after { right: 0; }
+.nav-cta { flex-shrink: 0; margin-left: 28px; padding: 13px 24px; font-size: 11.5px; }
 .nav-toggle {
   display: none;
   background: none;
@@ -237,9 +256,9 @@ section { position: relative; }
   align-items: center;
 }
 .hero-copy h1 {
-  font-size: clamp(40px, 5.6vw, 66px);
-  line-height: 1.08;
-  margin-top: 16px;
+  font-size: clamp(36px, 4.8vw, 58px);
+  line-height: 1.12;
+  margin-top: 18px;
 }
 .hero-lede {
   margin-top: 24px;
@@ -326,11 +345,11 @@ section { position: relative; }
   align-items: center;
   gap: 40px;
   flex-wrap: wrap;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   font-size: 13.5px;
   letter-spacing: 0.03em;
 }
-.trust-strip strong { color: var(--ink-soft); font-weight: 600; }
+.trust-strip strong { color: var(--ink); font-weight: 700; }
 
 /* ============ SOBRE (home teaser) ============ */
 #sobre { padding: 120px 0; }
@@ -363,7 +382,7 @@ section { position: relative; }
 .sobre-text p + p { margin-top: 18px; color: var(--ink-soft); font-size: 17px; }
 .sobre-text .lead {
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 500;
   color: var(--ink);
   line-height: 1.4;
@@ -487,7 +506,9 @@ section { position: relative; }
 
 /* ============ COMO FUNCIONA ============ */
 #como { padding: 120px 0; background: var(--sage-deep); color: var(--cream); }
-#como .section-head p { color: rgba(250,245,238,0.75); }
+#como .section-head h2 { color: var(--cream); }
+#como .section-head h2 em { color: #d7c48a; }
+#como .section-head p { color: rgba(250,245,238,0.82); }
 #como .eyebrow { color: #d7c48a; }
 #como .eyebrow::before { background: #d7c48a; }
 .como-steps {
@@ -509,36 +530,10 @@ section { position: relative; }
   margin-bottom: 18px;
 }
 .step-card h3 { color: var(--cream); font-size: 20px; margin-bottom: 12px; }
-.step-card p { color: rgba(250,245,238,0.78); font-size: 15px; }
-
-/* ============ NUMEROS ============ */
-#numeros { padding: 100px 0; }
-.numeros-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  text-align: center;
-}
-.stat-card {
-  padding: 34px 18px;
-  border-radius: 18px;
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-}
-.stat-card .stat-num {
-  font-family: var(--serif);
-  font-size: 40px;
-  color: var(--terracotta-deep);
-}
-.stat-card .stat-label {
-  margin-top: 10px;
-  font-size: 14px;
-  color: var(--ink-soft);
-  line-height: 1.4;
-}
+.step-card p { color: rgba(250,245,238,0.85); font-size: 15px; }
 
 /* ============ DEPOIMENTOS ============ */
-#depoimentos { padding: 110px 0; background: var(--cream-deep); }
+#depoimentos { padding: 120px 0; }
 .quote-card {
   max-width: 780px;
   margin: 0 auto;
@@ -554,16 +549,23 @@ section { position: relative; }
 .quote-card blockquote {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(24px, 3.4vw, 34px);
-  line-height: 1.45;
+  font-style: italic;
+  font-size: clamp(23px, 3.2vw, 32px);
+  line-height: 1.5;
   color: var(--ink);
-  margin: 6px 0 22px;
+  margin: 6px 0 26px;
 }
-.quote-cite { font-weight: 600; font-size: 15px; color: var(--ink-soft); }
+.quote-cite {
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta-deep);
+}
 .quote-footnote {
   margin-top: 34px;
   font-size: 13.5px;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   max-width: 560px;
   margin-left: auto;
   margin-right: auto;
@@ -631,10 +633,10 @@ section { position: relative; }
   font-size: 15px;
 }
 .contato-form input::placeholder,
-.contato-form textarea::placeholder { color: rgba(250,245,238,0.35); }
+.contato-form textarea::placeholder { color: rgba(250,245,238,0.5); }
 .contato-form textarea { resize: vertical; min-height: 100px; }
 .contato-form .btn-primary { width: 100%; justify-content: center; margin-top: 6px; }
-.form-note { margin-top: 14px; font-size: 12.5px; color: rgba(250,245,238,0.45); text-align: center; }
+.form-note { margin-top: 14px; font-size: 12.5px; color: rgba(250,245,238,0.65); text-align: center; }
 
 /* ============ FOOTER ============ */
 footer {
@@ -675,9 +677,9 @@ footer {
   margin-bottom: 20px;
 }
 .about-hero-head h1 {
-  font-size: clamp(36px, 5vw, 54px);
-  margin-top: 16px;
-  line-height: 1.12;
+  font-size: clamp(32px, 4.4vw, 48px);
+  margin-top: 18px;
+  line-height: 1.16;
 }
 .about-grid {
   display: grid;
@@ -731,9 +733,9 @@ footer {
 .about-body p.lead {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 29px;
+  font-size: 26px;
   color: var(--ink);
-  line-height: 1.4;
+  line-height: 1.45;
   margin-bottom: 30px;
 }
 .about-cta {
@@ -752,7 +754,7 @@ footer {
 @media (max-width: 980px) {
   .hero-grid, .sobre-grid, .about-grid { grid-template-columns: 1fr; }
   .about-photo-col { position: static; max-width: 420px; }
-  .areas-grid, .porque-grid, .numeros-grid, .como-steps { grid-template-columns: repeat(2, 1fr); }
+  .areas-grid, .porque-grid, .como-steps { grid-template-columns: repeat(2, 1fr); }
   .contato-grid { grid-template-columns: 1fr; padding: 44px; }
   .hero-visual { order: -1; }
   .nav-links { display: none; }
@@ -762,10 +764,10 @@ footer {
 
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
-  .areas-grid, .porque-grid, .numeros-grid, .como-steps { grid-template-columns: 1fr; }
+  .areas-grid, .porque-grid, .como-steps { grid-template-columns: 1fr; }
   .contato-grid { padding: 30px; }
   .hero-badge { position: static; margin-top: -30px; max-width: none; }
-  #sobre, #areas, #porque, #como, #numeros, #depoimentos { padding: 80px 0; }
+  #sobre, #areas, #porque, #como, #depoimentos { padding: 80px 0; }
   #contato { padding: 90px 0; }
   .footer-inner, .footer-bottom { flex-direction: column; align-items: flex-start; }
 
