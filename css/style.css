@@ -31,7 +31,7 @@
   --shadow-lg: 0 24px 70px rgba(43, 36, 31, 0.16);
 
   --serif: "Cormorant Garamond", "Didot", "Georgia", serif;
-  --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sans: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --container: 1180px;
 }
